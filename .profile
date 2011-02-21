@@ -53,7 +53,7 @@ ppsgrep () {
 }
 
 # git command completetion
-source ~/Dropbox/home/git-completion.bash
+source ~/bin/git-completion.bash
 
 source ~/.bashrc
 if [ -f /opt/local/etc/bash_completion ]; then
