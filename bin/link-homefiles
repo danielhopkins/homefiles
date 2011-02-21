@@ -5,3 +5,8 @@ ln -sf $homefilesdir/* ~/
 ln -sf $homefilesdir/.[a-zA-Z0-9]* ~/
 rm -f ~/.gitignore
 rm -f ~/.git
+
+# Setup vimtmp folder. Don't want this in github because I 
+# keep my home in dropbox as well and having the temp folder 
+# created tons of extra file actions (at every save)
+mkdir -p ~/.vimtmp
