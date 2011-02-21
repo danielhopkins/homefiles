@@ -33,5 +33,3 @@ bind "set show-all-if-ambiguous On" # this allows you to automatically show comp
 
 # Looks worthwhile to check out some of the other notes in this thread
 # http://news.ycombinator.com/item?id=2237595
-source ~/.local/bin/bashmarks.sh
-
