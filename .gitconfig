@@ -1,0 +1,42 @@
+[gui]
+    recentrepo = /Users/dhopkins/Documents/src/visor
+[core]
+    excludesfile = /Users/dhopkins/.gitignore_global
+    editor = vi
+    whitespace = cr-at-eol
+    autocrlf = input
+    safecrlf = true
+[user]
+    email = dhopkins@ziaconsulting.com
+    name = Dan Hopkins
+[color]
+    ui = true
+[alias]
+    flog = log --stat ..origin
+    fstash = stash save 'merge in remote'
+    st = status
+    nochange = update-index --assume-unchanged
+[interactive]
+    singlekey = true
+[push]
+    default = tracking
+[help]
+    autocorrect = 1
+[color "diff"]
+    whitespace = red reverse
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+[color "branch"]
+    current = yellow bold
+    local = green
+    remote = red bold
+[color "status"]
+    added = green bold
+    changed = yellow bold
+    untracked = red

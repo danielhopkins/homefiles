@@ -1,0 +1,17 @@
+#!/bin/bash
+echo "Creating .gitignore files in empty directories ..."  
+for URL in `find . -type d | grep -v \.git`; do  
+    if [ `ls $URL | wc -l` -eq 0 ]; then  
+        touch $URL/.gitignore
+        git add -f $URL/.gitignore
+    fi
+done | bash -x
+echo ".gitignore files in empty directories created."
+echo
+
+echo ".gitignore files created"
+echo "=============================================================="
+find . -name .gitignore
+echo "=============================================================="
+echo
+

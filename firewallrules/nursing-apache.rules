@@ -1,0 +1,1 @@
+add 01000 fwd 127.0.0.1,8000 log ip from any to any dst-port 80 in

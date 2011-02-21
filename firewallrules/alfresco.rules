@@ -1,0 +1,6 @@
+add 01000 fwd 127.0.0.1,8080 log ip from any to any dst-port 80 in
+add 01001 fwd 127.0.0.1,8443 log ip from any to any dst-port 443 in
+add 01002 fwd 127.0.0.1,10143 log ip from any to any dst-port 143 in
+add 01002 fwd 127.0.0.1,10021 log ip from any to any dst-port 21 in
+add 01002 fwd 127.0.0.1,10025 log ip from any to any dst-port 25 in
+

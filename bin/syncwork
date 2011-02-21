@@ -1,0 +1,10 @@
+#!/bin/bash
+set -m # Enable Job Control
+laptopsIP=$(awk '/inet / {print $2}' ~/Dropbox/ips/work) 
+# start silent tunnel
+ssh -N -L localhost:5022:$laptopsIP:22 ziaoffice &
+sleep 3
+rsync -e 'ssh -p 5022' -avu localhost:work/* ~/work/
+
+#echo 'kill tunnel'
+kill %1

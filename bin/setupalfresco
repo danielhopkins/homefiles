@@ -1,0 +1,10 @@
+#!/bin/bash
+if [ $# != 1 ]; then
+  echo "Usage: setupAlf.sh <name"
+  exit 0;
+fi
+mysql5 -u root -pbogus123 -e "create database $1;" 
+mysql5 -u root -pbogus123 -e "grant all on $1.* to 'alfresco'@'localhost' identified by 'alfresco' with grant option;"
+mkdir /opt/$1
+echo "Database is $1"
+echo "Alf Data dir is /opt/$1"

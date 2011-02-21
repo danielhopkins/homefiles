@@ -1,0 +1,20 @@
+#!/bin/bash
+
+grep_file() {
+    #HIT="`jar tvf $1 | grep $2`";
+    HIT="`strings $1 | grep -i $2`";
+
+    if [ -n "$HIT" ]; then
+       echo "$i";
+    fi	
+}
+
+if [ $# != 2 ]; then
+   echo "Usage: grepjar <pattern> <directory>";
+   exit 0;
+fi;
+
+for i in `find $2 -name "*.jar"`; do 
+    grep_file $i $1;
+done
+
