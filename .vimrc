@@ -137,8 +137,8 @@ endfun
 " }}}
 
 " Keymaps and Commands {{{
-let mapleader = "\\"
-let maplocalleader = "\\"
+let mapleader = ","
+let maplocalleader = ","
 
 map <leader>del :g/^\s*$/d<CR>         ' Delete Empty Lines
 map <leader>ddql :%s/^>\s*>.*//g<CR>   ' Delete Double Quoted Lines
@@ -939,3 +939,4 @@ let g:bufExplorerSplitType = 'v'
 let g:bufExplorerOpenMode = 1
 " }}}
 " }}}
+

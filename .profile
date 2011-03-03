@@ -3,7 +3,7 @@ export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Hom
 export FLEX_HOME="/Applications/Adobe Flash Builder 4 Plug-in/sdks/4.1.0"
 export MANPATH=/opt/local/share/man:$MANPATH
 export MAGICK_HOME="/opt/local"
-export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/:$MAGICK_HOME/lib"
+#export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/:$MAGICK_HOME/lib"
 export PGDATA=/opt/local/var/db/postgresql84/defaultdb
 export PATH=/Users/dhopkins/bin:/opt/local/lib/postgresql84/bin/:/opt/local/bin:/opt/local/sbin:$PATH
 
