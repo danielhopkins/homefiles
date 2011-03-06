@@ -95,6 +95,51 @@ endif
 
 
 " Functions {{{
+" Setups to word wrap for editing text file.
+" Turns on wrap and remaps keys to move by display line
+" instead of actual line.
+fun! ToggleWrap()
+  if &wrap
+    echo "Wrap OFF"
+    setlocal nowrap
+    set virtualedit=all
+    silent! nunmap <buffer> <Up>
+    silent! nunmap <buffer> <Down>
+    silent! nunmap <buffer> <Home>
+    silent! nunmap <buffer> <End>
+    silent! iunmap <buffer> <Up>
+    silent! iunmap <buffer> <Down>
+    silent! iunmap <buffer> <Home>
+    silent! iunmap <buffer> <End>
+    silent! nunmap <buffer> k
+    silent! nunmap <buffer> j
+    silent! nunmap <buffer> 0
+    silent! nunmap <buffer> $
+  else
+    echo "Wrap ON"
+    setlocal wrap linebreak nolist
+    set virtualedit=
+    setlocal display+=lastline
+    noremap  <buffer> <silent> <Up>   gk
+    noremap  <buffer> <silent> <Down> gj
+    noremap  <buffer> <silent> <Home> g<Home>
+    noremap  <buffer> <silent> <End>  g<End>
+    inoremap <buffer> <silent> <Up>   <C-o>gk
+    inoremap <buffer> <silent> <Down> <C-o>gj
+    inoremap <buffer> <silent> <Home> <C-o>g<Home>
+    inoremap <buffer> <silent> <End>  <C-o>g<End>
+    noremap  <buffer> <silent> k gk
+    noremap  <buffer> <silent> j gj
+    noremap  <buffer> <silent> 0 g0
+    noremap  <buffer> <silent> $ g$
+  endif
+endfunction
+
+function! s:setupMarkup()
+  call ToggleWrap()
+  map <buffer> <Leader>p :Mm <CR>
+endfunction
+
 fun! Print(...)
   let l:colo = g:colors_name
   let l:printcolo = a:0 == 1 ? a:1 : 'print_bw'
@@ -145,6 +190,7 @@ map <leader>ddql :%s/^>\s*>.*//g<CR>   ' Delete Double Quoted Lines
 map <leader>ddr :s/\.\+\s*/. /g<CR>    ' Delete Dot Runs
 map <leader>dsr :s/\s\s\+/ /g<CR>      ' Delete Space Runs
 map <leader>dtw :%s/\s\+$//g<CR>       ' Delete Trailing Whitespace
+noremap <silent> <Leader>w :call ToggleWrap()<CR>
 
 " Make <leader>' switch between ' and "
 nnoremap <leader>' ""yls<c-r>={'"': "'", "'": '"'}[@"]<cr><esc>
@@ -598,12 +644,17 @@ if has('autocmd') && v:version >= 700
 
     au VimEnter,BufWinEnter TreeExplorer let w:numberoverride = 1 | setlocal nonumber
   augroup END
+  
+  " md, markdown, and mk are markdown and define buffer-local preview
+  au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
+
 endif
 
 augroup KergothIndentation
   au!
   au BufReadPost * if exists("loaded_detectindent") | exe "DetectIndent" | endif
 augroup END
+
 " }}}
 
 " Encoding {{{
