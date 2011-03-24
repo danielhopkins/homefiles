@@ -14,8 +14,19 @@
 [alias]
     flog = log --stat ..origin
     fstash = stash save 'merge in remote'
-    st = status
     nochange = update-index --assume-unchanged
+    ai = add -i
+    # shortcuts for commands
+    s = status
+    d = diff
+    a = add
+    co = checkout
+    b = branch
+    l = log
+    f = fetch
+    r = reset
+    p = push
+    c = commit
 [interactive]
     singlekey = true
 [push]

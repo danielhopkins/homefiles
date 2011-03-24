@@ -7,13 +7,8 @@ export MAGICK_HOME="/opt/local"
 export PGDATA=/opt/local/var/db/postgresql84/defaultdb
 export PATH=/Users/dhopkins/bin:/opt/local/lib/postgresql84/bin/:/opt/local/bin:/opt/local/sbin:$PATH
 
-COLOR_YELLOW="\[\e[33;40m\]"
-COLOR_RED="\[\e[31;40m\]"
-COLOR_GREEN="\[\e[32;40m\]"
-COLOR_BLUE="\[\e[34;40m\]"
-COLOR_NONE="\[\e[0m\]"
-COLOR_NONEP="\[\e[38;40m\]"
-
+alias ..='cd ..'
+alias ...='cd ../..'
 alias ls='ls -h'
 alias l='ls'
 alias ll='ls -lh'
@@ -32,9 +27,6 @@ alias sudoedit='sudo -e'
 alias fle="perl -pi -e 's/\r\n?/\n/g'"
 alias grep='grep -s --color'
 alias fgrep='xargs grep -s --color'
-alias timemachine="syslog -F '\$Time \$Message' -k Sender com.apple.backupd -k Time ge -72h | tail -n 25"
-alias ..='cd ..'
-alias ...='cd ../..'
 alias mysql=mysql5
 
 function ppjson(){ cat "$1" | python2.6 -m simplejson.tool | tee "$1"; }

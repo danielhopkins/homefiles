@@ -1,18 +1,13 @@
 export SVN_EDITOR=vi
 export EDITOR=vi
 export LSCOLORS=ExFxCxDxBxegedabagacad
-# Sweet prompt from: http://lindesk.com/2009/03/customizing-the-terminal-the-prompt/
 export PROMPT_COMMAND='DIR=`pwd|sed -e "s!$HOME!~!"`; if [ ${#DIR} -gt 30 ]; then CurDir=${DIR:0:12}...${DIR:${#DIR}-15}; else CurDir=$DIR; fi'
-#PROMPT_COMMAND='CurDir=`pwd|sed "s!$HOME!~!"`; while [ ${#CurDir} -gt 30 ]; do DIR=`echo $CurDir|sed -E "s!([^/~])[^/]+!\1!"`; if [ $CurDir == $DIR ]; then break; else CurDir=$DIR; fi; done;'
 
 # Terminal colors (after installing GNU coreutils)
 NM="\[\033[0;38m\]" #means no background and white lines
 SI="\[\033[0;34m\]" #this is for the current directory
 IN="\[\033[0m\]"
-#export PS1="$NM[$SI${HOSTNAME%%.*} \$CurDir$NM] $IN"
-#export PS1="$NM[$SI\$CurDir$NM] $IN"
 export PS1="$NM$SI`hostname -s` \$CurDir\$ $NM$IN"
-#PS1="[$SI\$CurDir$NM]\$ "
 
 shopt -s histappend
 
