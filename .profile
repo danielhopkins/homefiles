@@ -22,6 +22,7 @@ alias stopmysql='/opt/local/bin/mysqladmin5 -u root -p shutdown'
 alias startvmware='sudo /Library/Application\ Support/VMware\ Fusion/boot.sh --start'
 alias stopvmware='sudo /Library/Application\ Support/VMware\ Fusion/boot.sh --stop'
 alias sudoedit='sudo -e'
+alias gotmp='cd $(mktemp -d /tmp/XXXXXXXXXXXXXXXX)'
 
 # Fix Line Endings
 alias fle="perl -pi -e 's/\r\n?/\n/g'"
