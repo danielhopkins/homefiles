@@ -1,7 +1,5 @@
-[gui]
-    recentrepo = /Users/dhopkins/Documents/src/visor
 [core]
-    excludesfile = /Users/dhopkins/.gitignore_global
+    excludesfile = ~/.gitignore_global
     editor = vi
     whitespace = cr-at-eol
     autocrlf = input
@@ -16,6 +14,8 @@
     fstash = stash save 'merge in remote'
     nochange = update-index --assume-unchanged
     ai = add -i
+    ca = commit -a
+    cam = commit -a -m
     # shortcuts for commands
     s = status
     d = diff
