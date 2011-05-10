@@ -309,6 +309,7 @@ endif
 
 " Indentation {{{
 set smarttab
+set nofoldenable
 
 " Disable insertion of tabs as compression / indentation
 set expandtab
@@ -423,14 +424,6 @@ set noerrorbells
 set vb t_vb=
 
 " Default folding settings
-if has('folding')
-  set foldenable
-  set foldcolumn=0
-  set foldminlines=3
-  set foldmethod=indent
-  set foldlevel=5
-endif
-
 " Cscope
 if has("cscope")
   set csto=0
@@ -567,8 +560,8 @@ set isfname+=32
 
 if has('gui_running')
   " Hide the mouse cursor while typing
-  "set mh
-  "set guioptions=Acga
+  set mh
+  set guioptions=Acga
 
   "set columns=112
   "set lines=50
@@ -729,6 +722,7 @@ if &term !~ '^screen'
   endif
 endif
 
+
 if &t_Co > 2 || has('gui_running')
   if exists('g:colors_name')
       unlet g:colors_name
@@ -736,9 +730,9 @@ if &t_Co > 2 || has('gui_running')
   set background=dark
 
   if has('gui')
-    colo baycomb
+    colo solarized
   else
-    colo zellner
+    colo baycomb
   endif
 
   " Colors red both trailing whitespace:
@@ -988,6 +982,10 @@ let g:bufExlporerDefaultHelp = 0
 let g:bufExplorerSortBy = 'mru'
 let g:bufExplorerSplitType = 'v'
 let g:bufExplorerOpenMode = 1
+
+let g:github_user = 'danielhopkins'
+let g:github_token = '49fc549f17b0eb04ea915965b5e90f71'
+let g:gist_open_browser_after_post = 1
 " }}}
 " }}}
 

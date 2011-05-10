@@ -1,5 +1,7 @@
 export SVN_EDITOR=vi
-export EDITOR=vi
+#export EDITOR=vi
+export EDITOR=/opt/local/bin/vi
+export VISUAL=/opt/local/bin/vi
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export PROMPT_COMMAND='DIR=`pwd|sed -e "s!$HOME!~!"`; if [ ${#DIR} -gt 30 ]; then CurDir=${DIR:0:12}...${DIR:${#DIR}-15}; else CurDir=$DIR; fi'
 

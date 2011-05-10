@@ -7,6 +7,8 @@
 [user]
     email = dhopkins@ziaconsulting.com
     name = Dan Hopkins
+[apply]
+    whitespace = fix
 [color]
     ui = true
 [alias]
@@ -15,6 +17,7 @@
     nochange = update-index --assume-unchanged
     ai = add -i
     ca = commit -a
+    cm = commit -m
     cam = commit -a -m
     # shortcuts for commands
     s = status
@@ -27,12 +30,11 @@
     r = reset
     p = push
     c = commit
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 [interactive]
     singlekey = true
 [push]
     default = tracking
-[help]
-    autocorrect = 1
 [color "diff"]
     whitespace = red reverse
     meta = yellow bold
