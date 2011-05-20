@@ -1,20 +1,12 @@
 #!/bin/sh
 
 PUBKEY=`cat ~/.ssh/id_rsa.pub`
-BASHRC=`cat ~/.bashrc`
 SSH="/usr/bin/ssh"
 PREFERRED_SHELL="bash"
 
 # Save our destination to ssh to
 DESTINATION=$1
-# Shift destination off array leaving us only with the commands to run remotely
-shift 1
 
-# Do we want just a shell or do we want to run some commands remotely?
-if [ "$1" ]; then
-  COMMAND="\`which $PREFERRED_SHELL\` -c '$@'"
-else
-  COMMAND="\`which $PREFERRED_SHELL\`"
-fi
+COMMAND="\`which $PREFERRED_SHELL\`"
 
 $SSH -tt $DESTINATION "if [ ! -d ~/.ssh ]; then mkdir ~/.ssh; fi; if [ ! -e ~/.ssh/authorized_keys ]; then touch ~/.ssh/authorized_keys; fi; chmod g-w ~/ ~/.ssh ~/.ssh/authorized_keys; PUBKEY='"$PUBKEY"'; grep '"$PUBKEY"' ~/.ssh/authorized_keys >/dev/null 2>&1 || (echo '"$PUBKEY"' >> ~/.ssh/authorized_keys && echo "Installed public key"); $COMMAND"
