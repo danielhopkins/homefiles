@@ -136,9 +136,9 @@ call s:DefineCommand("e", "Edit")
 "imap <C-e> <esc>$i<right>
 "map <C-e> <esc>$<right>
 
-noremap <silent> <F14> <esc>
-inoremap <silent> <F14>  <esc>
-cnoremap <silent> <F14> <esc>
+noremap <silent> <F16> <esc>
+inoremap <silent> <F16>  <esc>
+cnoremap <silent> <F16> <esc>
 
 imap <M-D-Left> <esc><C-w><left>i
 imap <M-D-Right> <esc><C-w><right>i

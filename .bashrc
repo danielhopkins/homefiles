@@ -1,7 +1,9 @@
+# RVM stuff 
+[[ -s "/Users/dhopkins/.rvm/scripts/rvm" ]] && source "/Users/dhopkins/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+
 export SVN_EDITOR=vi
-#export EDITOR=vi
-export EDITOR=/opt/local/bin/vi
-export VISUAL=/opt/local/bin/vi
+export EDITOR=vi
+export VISUAL=vi
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export PROMPT_COMMAND='DIR=`pwd|sed -e "s!$HOME!~!"`; if [ ${#DIR} -gt 30 ]; then CurDir=${DIR:0:12}...${DIR:${#DIR}-15}; else CurDir=$DIR; fi'
 
@@ -30,3 +32,4 @@ bind "set show-all-if-ambiguous On" # this allows you to automatically show comp
 
 # Looks worthwhile to check out some of the other notes in this thread
 # http://news.ycombinator.com/item?id=2237595
+
